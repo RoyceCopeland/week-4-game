@@ -5,7 +5,9 @@ $(document).ready(function() {
     var randomNumberSkull2;
     var randomNumberSkull3;
     var randomNumberSkull4;
+    var startingScore = 0;
     var totalScore = 0;
+    var resetScore = 0;
 
 
     //There will be four crystals displayed as buttons on the page.
@@ -27,51 +29,63 @@ $(document).ready(function() {
 
         $("#targetScore").html(randomTargetNumber);
 
-
-
-
-        //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-        //Your game will hide this amount until the player clicks a crystal.
-
-        // That amount of points must stay the same throught a given game.
-
-        //When they do click one, update the player's score counter.
-
-
-        $("#sugarSkull1").on("click", function() {
-            totalScore = totalScore + randomNumberSkull1;
-            $("#playerScore").html(totalScore);
-            console.log(randomNumberSkull1);
-            console.log(totalScore);
-        })
-
-        $("#sugarSkull2").on("click", function() {
-            totalScore = totalScore + randomNumberSkull2;
-            $("#playerScore").html(totalScore);
-            console.log(randomNumberSkull2);
-
-            console.log(totalScore);
-        })
-
-        $("#sugarSkull3").on("click", function() {
-            totalScore = totalScore + randomNumberSkull3;
-            $("#playerScore").html(totalScore);
-            console.log(randomNumberSkull3);
-
-            console.log(totalScore);
-        })
-
-        $("#sugarSkull4").on("click", function() {
-            totalScore = totalScore + randomNumberSkull4;
-            $("#playerScore").html(totalScore);
-            console.log(randomNumberSkull4);
-
-            console.log(totalScore);
-
-        })
-
+        $("#playerScore").html(startingScore);
 
     })
+
+
+    //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+    //Your game will hide this amount until the player clicks a crystal.
+
+    // That amount of points must stay the same throught a given game.
+
+    //When they do click one, update the player's score counter.
+
+
+    $("#sugarSkull1").on("click", function() {
+        totalScore = totalScore + randomNumberSkull1;
+        $("#playerScore").html(totalScore);
+        console.log(randomNumberSkull1);
+        console.log(totalScore);
+        if (totalScore == randomTargetNumber) {
+            console.log("You win!");
+        }
+    })
+
+    $("#sugarSkull2").on("click", function() {
+        totalScore = totalScore + randomNumberSkull2;
+        $("#playerScore").html(totalScore);
+        console.log(randomNumberSkull2);
+        console.log(totalScore);
+        if (totalScore == randomTargetNumber) {
+            console.log("You win!");
+        }
+    })
+
+    $("#sugarSkull3").on("click", function() {
+        totalScore = totalScore + randomNumberSkull3;
+        $("#playerScore").html(totalScore);
+        console.log(randomNumberSkull3);
+        console.log(totalScore);
+        if (totalScore == randomTargetNumber) {
+            console.log("You win!");
+        }
+    })
+
+    $("#sugarSkull4").on("click", function() {
+        totalScore = totalScore + randomNumberSkull4;
+        $("#playerScore").html(totalScore);
+        console.log(randomNumberSkull4);
+        console.log(totalScore);
+        if (totalScore == randomTargetNumber) {
+            console.log("You win!");
+        }
+
+    })
+
+
+
+
 
 })
 
