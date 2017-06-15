@@ -1,33 +1,62 @@
 "use strict";
 $(document).ready(function() {
-    var randomNumber;
+        var randomTargetNumber;
+        var randomNumberSkull1;
+        var randomNumberSkull2;
+        var randomNumberSkull3;
+        var randomNumberSkull4;
 
 
-    //There will be four crystals displayed as buttons on the page.
+        //There will be four crystals displayed as buttons on the page.
 
 
-    //The player will be shown a random number at the start of the game.
-    $("#randomNumberButton").on("click", function() {
-        var randomNumber = Math.floor(Math.random() * (102) + 19);
-        console.log(randomNumber);
+        //The player will be shown a random number at the start of the game.
+        $("#randomNumberButton").on("click", function() {
+            var randomTargetNumber = Math.floor(Math.random() * (102) + 19);
+            console.log(randomTargetNumber);
 
-           $("#targetScore").html(randomNumber);
-             //      document.getElementById("#guessPanel").innerHTML = answerArray;
-         
+            $("#targetScore").html(randomTargetNumber);
+
+        })
+
+
+        //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+        // That amount of points must stay the same throught a given game.
+
+        $("#sugarSkull1").on("click", function() {
+            var randomNumberSkull1 = Math.floor(Math.random() * (11) + 1);
+            console.log(randomNumberSkull1);
+
+
+
+
+        })
+
+        $("#sugarSkull2").on("click", function() {
+            var randomNumberSkull2 = Math.floor(Math.random() * (11) + 1);
+            console.log(randomNumberSkull2);
+
+
+        })
+
+        $("#sugarSkull3").on("click", function() {
+            var randomNumberSkull3 = Math.floor(Math.random() * (11) + 1);
+            console.log(randomNumberSkull3);
+
+
+        })
+
+        $("#sugarSkull4").on("click", function() {
+                var randomNumberSkull4 = Math.floor(Math.random() * (11) + 1);
+                console.log(randomNumberSkull4);
+
+
+            })
+            //Your game will hide this amount until the player clicks a crystal.
+
 
     })
-})
-
-//When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
-
-
-
-//Your game will hide this amount until the player clicks a crystal.
-
-
-
-//When they do click one, update the player's score counter.
+    //When they do click one, update the player's score counter.
 
 
 
