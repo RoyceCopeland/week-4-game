@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     //The player will be shown a random number at the start of the game.
     $("#randomNumberButton").on("click", function() {
-        var randomTargetNumber = Math.floor(Math.random() * (102) + 19);
+        randomTargetNumber = Math.floor(Math.random() * (102) + 19);
         randomNumberSkull1 = Math.floor(Math.random() * (11) + 1);
         randomNumberSkull2 = Math.floor(Math.random() * (11) + 1);
         randomNumberSkull3 = Math.floor(Math.random() * (11) + 1);
