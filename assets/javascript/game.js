@@ -5,9 +5,11 @@ $(document).ready(function() {
     var randomNumberSkull2;
     var randomNumberSkull3;
     var randomNumberSkull4;
-    var startingScore = 0;
+   // var startingScore = 0;
     var totalScore = 0;
-    var resetScore = 0;
+   // var resetScore = 0;
+    var wins;
+    var losses;
 
 
     //There will be four crystals displayed as buttons on the page.
@@ -21,16 +23,15 @@ $(document).ready(function() {
         randomNumberSkull3 = Math.floor(Math.random() * (11) + 1);
         randomNumberSkull4 = Math.floor(Math.random() * (11) + 1);
 
-        // console.log(randomTargetNumber);
+        console.log(randomTargetNumber);
         // console.log(randomNumberSkull1);
         // console.log(randomNumberSkull2);
         // console.log(randomNumberSkull3);
         // console.log(randomNumberSkull4);
 
         $("#targetScore").html(randomTargetNumber);
-
-        $("#playerScore").html(startingScore);
-
+        totalScore = 0;
+        $("#playerScore").html(totalScore);
     })
 
 
@@ -49,6 +50,8 @@ $(document).ready(function() {
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
             console.log("You win!");
+        } else if (totalScore > randomTargetNumber) {
+            console.log("You lose!");
         }
     })
 
@@ -59,6 +62,8 @@ $(document).ready(function() {
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
             console.log("You win!");
+        } else if (totalScore > randomTargetNumber) {
+            console.log("You lose!");
         }
     })
 
@@ -69,6 +74,8 @@ $(document).ready(function() {
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
             console.log("You win!");
+        } else if (totalScore > randomTargetNumber) {
+            console.log("You lose!");
         }
     })
 
@@ -79,6 +86,8 @@ $(document).ready(function() {
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
             console.log("You win!");
+        } else if (totalScore > randomTargetNumber) {
+            console.log("You lose!");
         }
 
     })
