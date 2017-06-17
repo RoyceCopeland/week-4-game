@@ -10,8 +10,8 @@ $(document).ready(function() {
     var resetScore = 0;
     var startingWins = 0;
     var startingLosses = 0;
-    var wins;
-    var losses;
+    var wins = 0;
+    var losses = 0;
 
     function reset() {
         randomTargetNumber = Math.floor(Math.random() * (102) + 19);
@@ -25,7 +25,24 @@ $(document).ready(function() {
 
     }
 
+function winOrLose () {
+ $("#playerScore").html(totalScore);
 
+        if (totalScore == randomTargetNumber) {
+            wins = wins + 1;
+            $("#winsBox").html(wins);
+
+            alert("You win!");
+            reset();
+        } else if (totalScore > randomTargetNumber) {
+            losses = losses + 1;
+            $("#lossesBox").html(losses);
+
+            alert("You lose!");
+            reset();
+        }
+
+}
     //There will be four crystals displayed as buttons on the page.
 
 
@@ -37,19 +54,15 @@ $(document).ready(function() {
         randomNumberSkull3 = Math.floor(Math.random() * (11) + 1);
         randomNumberSkull4 = Math.floor(Math.random() * (11) + 1);
 
-        console.log(randomTargetNumber);
-        // console.log(randomNumberSkull1);
-        // console.log(randomNumberSkull2);
-        // console.log(randomNumberSkull3);
-        // console.log(randomNumberSkull4);
-
         $("#targetScore").html(randomTargetNumber);
         totalScore = 0;
         //  startingWins = 0;
-        $("#winsBox").html(startingWins);
+        wins = 0;
+        $("#winsBox").html(wins);
 
         //startingLosses = 0;
-        $("#lossesBox").html(startingLosses);
+        losses = 0;
+        $("#lossesBox").html(losses);
 
         $("#playerScore").html(totalScore);
     })
@@ -66,192 +79,30 @@ $(document).ready(function() {
 
     $("#sugarSkull1").on("click", function() {
         totalScore = totalScore + randomNumberSkull1;
-        $("#playerScore").html(totalScore);
-        console.log(randomNumberSkull1);
-        console.log(totalScore);
-
-        //The player wins if their total score matches the random number from the beginning of the game.
-
-        //The player loses if their score goes above the random number.
-
-        if (totalScore == randomTargetNumber) {
-            wins = startingWins + 1;
-            $("#winsBox").html(wins);
-
-            alert("You win!");
-            reset();
-           
-           // console.log(randomNumberSkull1);
-           // console.log(randomNumberSkull2);
-           // console.log(randomNumberSkull3);
-           // console.log(randomNumberSkull4);
-           // console.log(randomTargetNumber);
-
-
-
-
-        } else if (totalScore > randomTargetNumber) {
-            losses = startingLosses + 1;
-            $("#lossesBox").html(losses + 1);
-
-            alert("You lose!");
-            reset();
-
-           // console.log(randomTargetNumber);
-           // console.log(randomNumberSkull1);
-           // console.log(randomNumberSkull2);
-           // console.log(randomNumberSkull3);
-           // console.log(randomNumberSkull4);
-
-
-
-        }
+    winOrLose();
     })
 
     $("#sugarSkull2").on("click", function() {
         totalScore = totalScore + randomNumberSkull2;
-        $("#playerScore").html(totalScore);
-        console.log(randomNumberSkull2);
-        console.log(totalScore);
-        if (totalScore == randomTargetNumber) {
-            wins = startingWins + 1;
-
-            $("#winsBox").html(wins + 1);
-
-            alert("You win!");
-            reset();
-
-            //console.log(randomTargetNumber);
-            //console.log(randomNumberSkull1);
-            //console.log(randomNumberSkull2);
-            //console.log(randomNumberSkull3);
-            //console.log(randomNumberSkull4);
-
-
-
-
-        } else if (totalScore > randomTargetNumber) {
-            losses = startingLosses + 1;
-            $("#lossesBox").html(losses + 1);
-
-            alert("You lose!");
-            reset();
-
-           //console.log(randomTargetNumber);
-           //console.log(randomNumberSkull1);
-           //console.log(randomNumberSkull2);
-           //console.log(randomNumberSkull3);
-           //console.log(randomNumberSkull4);
-
-
-
-        }
+       winOrLose();
     })
 
     $("#sugarSkull3").on("click", function() {
         totalScore = totalScore + randomNumberSkull3;
-        $("#playerScore").html(totalScore);
-        console.log(randomNumberSkull3);
-        console.log(totalScore);
-        if (totalScore == randomTargetNumber) {
-            wins = startingWins + 1;
-
-            $("#winsBox").html(wins + 1);
-
-            alert("You win!");
-
-            reset();
-
-           //console.log(randomTargetNumber);
-           //console.log(randomNumberSkull1);
-           //console.log(randomNumberSkull2);
-           //console.log(randomNumberSkull3);
-           //console.log(randomNumberSkull4);
-
-
-
-
-
-        } else if (totalScore > randomTargetNumber) {
-            losses = startingLosses + 1;
-            $("#lossesBox").html(losses + 1);
-
-            alert("You lose!");
-
-            reset();
-
-            //console.log(randomTargetNumber);
-            //console.log(randomNumberSkull1);
-            //console.log(randomNumberSkull2);
-            //console.log(randomNumberSkull3);
-            //console.log(randomNumberSkull4);
-
-
-        }
+       winOrLose();
     })
 
     $("#sugarSkull4").on("click", function() {
         totalScore = totalScore + randomNumberSkull4;
-        $("#playerScore").html(totalScore);
-        console.log(randomNumberSkull4);
-        console.log(totalScore);
-        if (totalScore == randomTargetNumber) {
-            wins = startingWins + 1;
-
-            $("#winsBox").html(wins + 1);
-
-            alert("You win!");
-
-            reset();
-
-            //console.log(randomTargetNumber);
-            //console.log(randomNumberSkull1);
-            //console.log(randomNumberSkull2);
-            //console.log(randomNumberSkull3);
-            //console.log(randomNumberSkull4);
-
-
-
-
-        } else if (totalScore > randomTargetNumber) {
-            losses = startingLosses + 1;
-            $("#lossesBox").html(losses + 1);
-
-            alert("You lose!");
-
-            reset();
-
-            //console.log(randomTargetNumber);
-            //console.log(randomNumberSkull1);
-            //console.log(randomNumberSkull2);
-            //console.log(randomNumberSkull3);
-            //console.log(randomNumberSkull4);
-
-
-        }
+        winOrLose();
 
     })
-
-
-
-
 
 })
 
 
-
-
-
-
-
 //The game restarts whenever the player wins or loses.
-
-
-
 //When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-
-
-
 //The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
 
