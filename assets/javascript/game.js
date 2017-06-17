@@ -5,11 +5,25 @@ $(document).ready(function() {
     var randomNumberSkull2;
     var randomNumberSkull3;
     var randomNumberSkull4;
-   // var startingScore = 0;
+    // var startingScore = 0;
     var totalScore = 0;
-   // var resetScore = 0;
+    var resetScore = 0;
+    var startingWins = 0;
+    var startingLosses = 0;
     var wins;
     var losses;
+
+    function reset() {
+        randomTargetNumber = Math.floor(Math.random() * (102) + 19);
+        randomNumberSkull1 = Math.floor(Math.random() * (11) + 1);
+        randomNumberSkull2 = Math.floor(Math.random() * (11) + 1);
+        randomNumberSkull3 = Math.floor(Math.random() * (11) + 1);
+        randomNumberSkull4 = Math.floor(Math.random() * (11) + 1);
+        $("#targetScore").html(randomTargetNumber);
+        $("#playerScore").html(resetScore);
+        totalScore = 0;
+
+    }
 
 
     //There will be four crystals displayed as buttons on the page.
@@ -31,6 +45,12 @@ $(document).ready(function() {
 
         $("#targetScore").html(randomTargetNumber);
         totalScore = 0;
+        //  startingWins = 0;
+        $("#winsBox").html(startingWins);
+
+        //startingLosses = 0;
+        $("#lossesBox").html(startingLosses);
+
         $("#playerScore").html(totalScore);
     })
 
@@ -43,15 +63,48 @@ $(document).ready(function() {
     //When they do click one, update the player's score counter.
 
 
+
     $("#sugarSkull1").on("click", function() {
         totalScore = totalScore + randomNumberSkull1;
         $("#playerScore").html(totalScore);
         console.log(randomNumberSkull1);
         console.log(totalScore);
+
+        //The player wins if their total score matches the random number from the beginning of the game.
+
+        //The player loses if their score goes above the random number.
+
         if (totalScore == randomTargetNumber) {
-            console.log("You win!");
+            wins = startingWins + 1;
+            $("#winsBox").html(wins);
+
+            alert("You win!");
+            reset();
+           
+           // console.log(randomNumberSkull1);
+           // console.log(randomNumberSkull2);
+           // console.log(randomNumberSkull3);
+           // console.log(randomNumberSkull4);
+           // console.log(randomTargetNumber);
+
+
+
+
         } else if (totalScore > randomTargetNumber) {
-            console.log("You lose!");
+            losses = startingLosses + 1;
+            $("#lossesBox").html(losses + 1);
+
+            alert("You lose!");
+            reset();
+
+           // console.log(randomTargetNumber);
+           // console.log(randomNumberSkull1);
+           // console.log(randomNumberSkull2);
+           // console.log(randomNumberSkull3);
+           // console.log(randomNumberSkull4);
+
+
+
         }
     })
 
@@ -61,9 +114,37 @@ $(document).ready(function() {
         console.log(randomNumberSkull2);
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
-            console.log("You win!");
+            wins = startingWins + 1;
+
+            $("#winsBox").html(wins + 1);
+
+            alert("You win!");
+            reset();
+
+            //console.log(randomTargetNumber);
+            //console.log(randomNumberSkull1);
+            //console.log(randomNumberSkull2);
+            //console.log(randomNumberSkull3);
+            //console.log(randomNumberSkull4);
+
+
+
+
         } else if (totalScore > randomTargetNumber) {
-            console.log("You lose!");
+            losses = startingLosses + 1;
+            $("#lossesBox").html(losses + 1);
+
+            alert("You lose!");
+            reset();
+
+           //console.log(randomTargetNumber);
+           //console.log(randomNumberSkull1);
+           //console.log(randomNumberSkull2);
+           //console.log(randomNumberSkull3);
+           //console.log(randomNumberSkull4);
+
+
+
         }
     })
 
@@ -73,9 +154,39 @@ $(document).ready(function() {
         console.log(randomNumberSkull3);
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
-            console.log("You win!");
+            wins = startingWins + 1;
+
+            $("#winsBox").html(wins + 1);
+
+            alert("You win!");
+
+            reset();
+
+           //console.log(randomTargetNumber);
+           //console.log(randomNumberSkull1);
+           //console.log(randomNumberSkull2);
+           //console.log(randomNumberSkull3);
+           //console.log(randomNumberSkull4);
+
+
+
+
+
         } else if (totalScore > randomTargetNumber) {
-            console.log("You lose!");
+            losses = startingLosses + 1;
+            $("#lossesBox").html(losses + 1);
+
+            alert("You lose!");
+
+            reset();
+
+            //console.log(randomTargetNumber);
+            //console.log(randomNumberSkull1);
+            //console.log(randomNumberSkull2);
+            //console.log(randomNumberSkull3);
+            //console.log(randomNumberSkull4);
+
+
         }
     })
 
@@ -85,9 +196,38 @@ $(document).ready(function() {
         console.log(randomNumberSkull4);
         console.log(totalScore);
         if (totalScore == randomTargetNumber) {
-            console.log("You win!");
+            wins = startingWins + 1;
+
+            $("#winsBox").html(wins + 1);
+
+            alert("You win!");
+
+            reset();
+
+            //console.log(randomTargetNumber);
+            //console.log(randomNumberSkull1);
+            //console.log(randomNumberSkull2);
+            //console.log(randomNumberSkull3);
+            //console.log(randomNumberSkull4);
+
+
+
+
         } else if (totalScore > randomTargetNumber) {
-            console.log("You lose!");
+            losses = startingLosses + 1;
+            $("#lossesBox").html(losses + 1);
+
+            alert("You lose!");
+
+            reset();
+
+            //console.log(randomTargetNumber);
+            //console.log(randomNumberSkull1);
+            //console.log(randomNumberSkull2);
+            //console.log(randomNumberSkull3);
+            //console.log(randomNumberSkull4);
+
+
         }
 
     })
@@ -100,11 +240,7 @@ $(document).ready(function() {
 
 
 
-//The player wins if their total score matches the random number from the beginning of the game.
 
-
-
-//The player loses if their score goes above the random number.
 
 
 
